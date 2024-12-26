@@ -1,0 +1,26 @@
+nav.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+nav.navbar .navbar-brand {
+  color: #fff;
+}
+nav.navbar .container-fluid {
+  max-width: 1200px;
+  margin: auto;
+}
+nav.navbar .container-fluid .navbar-nav {
+  margin-left: auto;
+}
+nav.navbar .container-fluid .navbar-nav li {
+  list-style: none;
+}
+nav.navbar .container-fluid .navbar-nav li .link-a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 12px;
+}/*# sourceMappingURL=nav.css.map */
