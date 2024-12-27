@@ -1,0 +1,11 @@
+.item {
+  width: 48%;
+  padding: 20px 0;
+}
+.item .contents {
+  width: 60%;
+}
+.item img {
+  width: 120px;
+  border-radius: 0px 150px 150px 150px;
+}/*# sourceMappingURL=MenueSection.css.map */

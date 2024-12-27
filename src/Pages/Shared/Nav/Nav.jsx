@@ -11,7 +11,7 @@ export default function Nav () {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul className="navbar-nav">
                         <li><Link className="link-a" aria-current="page" to="/">Home</Link></li>
-                        <li><Link className="link-a" to="/">Features</Link></li>
+                        <li><Link className="link-a" to="/ourMenue">Our Menue</Link></li>
                         <li><Link className="link-a" to="/">Pricing</Link></li>
                         <li><Link className="link-a" to="/">Disabled</Link></li>
                     </ul>

@@ -1,13 +1,20 @@
 import Banner from "./Banner";
 import Swip from "./Swip";
-import Title from "./Title";
+import Menue from "../Shared/MenueSection/Menue";
 import './home.css'
+import useMenue from "../../Hooks/useMenue";
+import Title from "../Shared/Title/Title";
 export default function Home() {
+
+    const MenueData = useMenue().filter(x => x.category == 'popular');
+    
+
     return (
         <>
             <Banner></Banner>
-            <Title time="---From 11:00am to 10:00pm---" title="ORDER ONLINE"></Title>
             <Swip></Swip>
+            <Title time="---Check it out---" title="FROM OUR MENU"></Title>
+            <Menue category={'popular'} data={MenueData}></Menue>
         </>
     );
 }

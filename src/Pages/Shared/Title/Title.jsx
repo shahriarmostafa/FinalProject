@@ -1,3 +1,5 @@
+import './SectionHeader.css';
+
 export default function Title({time, title}) {
     return(
         <>

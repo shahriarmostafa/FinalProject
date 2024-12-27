@@ -10,9 +10,16 @@ import img4 from '../../assets/SwiperImages/slide4.jpg';
 import img5 from '../../assets/SwiperImages/slide5.jpg';
 import { Pagination } from 'swiper/modules';
 
+
+import Title from "../Shared/Title/Title";
+
+
+
 export default function Swip() {
     return(
-        <Swiper className='container' 
+        <section>
+            <Title time="---From 11:00am to 10:00pm---" title="ORDER ONLINE"></Title>
+            <Swiper className='container' 
         modules={[Pagination]}
         spaceBetween={30}
         slidesPerView={4}
@@ -39,5 +46,6 @@ export default function Swip() {
                 <h4 className='swip-title'>FRUITS</h4>
             </SwiperSlide>
         </Swiper>
+        </section>
     )
 }
