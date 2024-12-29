@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useMenue = () => {
     const [menueData, setMenueData] = useState([]);
         useEffect(() => {
-            fetch("https://raw.githubusercontent.com/ProgrammingHero1/bistro-boss-restaurant-resources/refs/heads/main/menu.json")
+            fetch("http://localhost:5000/menue")
             .then(res => res.json())
             .then((data) => {
                 setMenueData(data);

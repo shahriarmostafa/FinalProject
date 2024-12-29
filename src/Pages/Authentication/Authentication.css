@@ -1,0 +1,16 @@
+section.form {
+  padding: 100px 0;
+}
+section.form h2 {
+  text-align: center;
+}
+section.form form input {
+  width: 50%;
+  margin: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+section.form form input[type=submit] {
+  background: #000;
+  color: #fff;
+}/*# sourceMappingURL=Authentication.css.map */
