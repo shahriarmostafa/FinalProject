@@ -1,0 +1,21 @@
+section.db-carts{
+    width: 70%;
+    padding: 50px;
+    .carts{
+        width: 100%;
+        table{
+            width: 80%;
+            margin: auto;
+            tbody{
+                width: 100%;
+            }
+            tr{
+                width: 80%;
+                &:nth-child(1){
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

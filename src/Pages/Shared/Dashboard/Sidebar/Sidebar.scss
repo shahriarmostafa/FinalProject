@@ -1,0 +1,22 @@
+nav.sidebar{
+    width: 30%;
+    padding: 20px;
+    background: rgb(100, 66, 4);
+    min-height: 100vh;
+    ul{
+        li{
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: #fff;
+                padding: 20px;
+                display: block;
+                font-weight: bold;
+                &:hover{
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,24 +1,40 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useUser from "../../../Hooks/useUser";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useCart from "../../../Hooks/useCart";
 
-
-export default function TabItem ({name, recipe, gotto, imgSrc}) {
+export default function TabItem ({name, recipe, gotto, imgSrc, price}) {
     const user = useUser()
-
+    const axiosSecure = useAxiosSecure();
     const navigate = useNavigate();
     const location = useLocation();
 
+    
+    const userName = user.displayName;
+    const userEmail = user.email;
+
+    const [cart, refetch] = useCart()
+
+    
+    
+    
     const handleAddToCard = item => {
-        // fetch("http://localhost:5000/carts", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify(item)
-        // })
-        if(user && useReducer.email){
-            //ddoododo
+        if(user && user.email){
+            axiosSecure.post('/carts', {item, userEmail, userName})
+            .then(res => {
+                refetch();
+                Swal.fire({
+                    title: "<strong>Item Added to Cart</strong>",
+                    icon: "success",
+                    text: "View Cart?",
+                    showCancelButton: true
+                }).then(result => {
+                    if(result.isConfirmed){
+                        navigate('/carts')
+                    }
+                })
+            })
         }
         else{
             Swal.fire({
@@ -43,7 +59,7 @@ export default function TabItem ({name, recipe, gotto, imgSrc}) {
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <p className="card-text">{recipe}</p>
-                <button onClick={() => handleAddToCard({name, recipe, gotto, imgSrc})} className="btn btn-success">Add To Card</button>
+                <button onClick={() => handleAddToCard({name, recipe, gotto, imgSrc, price})} className="btn btn-success">Add To Card</button>
             </div>
         </div>
     );

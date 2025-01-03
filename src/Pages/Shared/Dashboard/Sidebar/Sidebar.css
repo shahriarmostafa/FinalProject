@@ -1,0 +1,20 @@
+nav.sidebar {
+  width: 30%;
+  padding: 20px;
+  background: rgb(100, 66, 4);
+  min-height: 100vh;
+}
+nav.sidebar ul li {
+  list-style: none;
+}
+nav.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+  display: block;
+  font-weight: bold;
+}
+nav.sidebar ul li a:hover {
+  background: #000;
+  color: #fff;
+}/*# sourceMappingURL=Sidebar.css.map */

@@ -36,27 +36,27 @@ export default function TabSection() {
 
                 <TabPanel className="d-flex justify-content-between flex-wrap">
                     {salad.map(x => {
-                        return <TabItem gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
+                        return <TabItem price={x.price} gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
                     })}
                 </TabPanel>
                 <TabPanel  className="d-flex justify-content-between flex-wrap">
                     {pizza.map(x => {
-                        return <TabItem gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
+                        return <TabItem price={x.price} gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
                     })}
                 </TabPanel>
                 <TabPanel  className="d-flex justify-content-between flex-wrap">
                     {soup.map(x => {
-                        return <TabItem gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
+                        return <TabItem price={x.price} gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
                     })}
                 </TabPanel>
                 <TabPanel  className="d-flex justify-content-between flex-wrap">
                     {dessert.map(x => {
-                        return <TabItem gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
+                        return <TabItem price={x.price} gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
                     })}
                 </TabPanel>
                 <TabPanel  className="d-flex justify-content-between  flex-wrap">
                     {drinks.map(x => {
-                        return <TabItem gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
+                        return <TabItem price={x.price} gotto={x.category} recipe={x.recipe} name={x.name} imgSrc={x.image} key={x._id} ></TabItem>
                     })}
                 </TabPanel>
             </Tabs>

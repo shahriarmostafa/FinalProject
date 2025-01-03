@@ -1,7 +1,8 @@
 import './Authentication.css';
-import { AuthContext } from '../../AuthProvider.jsx/AuthProvider';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SocialSignUp from '../Shared/SocialSignUp/SocialSignUp';
 export default function SignIn() {
 
     const {signIn, loading} = useContext(AuthContext);
@@ -38,6 +39,7 @@ export default function SignIn() {
                     <input name="password" type="password" placeholder="Enter your password" />
                     <input type="submit" value="Submit"/>
                 </form>
+                <SocialSignUp></SocialSignUp>
             </div>
         </section>
     );

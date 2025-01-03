@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-
+import useAxiosSecure from './useAxiosSecure';
 
 const useMenue = () => {
+    const axiosSecure = useAxiosSecure()
     const [menueData, setMenueData] = useState([]);
         useEffect(() => {
-            fetch("http://localhost:5000/menue")
-            .then(res => res.json())
-            .then((data) => {
-                setMenueData(data);
+            axiosSecure.get('/menue').then(res => {
+                setMenueData(res.data)
             })
         }, [])
         return menueData;

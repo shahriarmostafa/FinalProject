@@ -1,15 +1,19 @@
 import './Authentication.css';
-import { AuthContext } from '../../AuthProvider.jsx/AuthProvider';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useContext } from 'react';
 
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import SocialSignUp from '../Shared/SocialSignUp/SocialSignUp';
 
 export default function SignUp() { 
 
-    const {signUp, loading, editProfile, user} = useContext(AuthContext);
+    const {signUp, editProfile} = useContext(AuthContext);
     const navigate = useNavigate();
-    console.log(user);
+
+    const AxiosPublic = useAxiosPublic();
     
     const submitHandler = (e) => {
         e.preventDefault();
@@ -17,20 +21,25 @@ export default function SignUp() {
         const name = form.name.value;
         const email =  form.email.value;
         const password = form.password.value
-        signUp(email, password).then(res=> {
+        signUp(email, password).then( res => {
             editProfile(name)
             .then(response => {
-                console.log(response);
+                AxiosPublic.post("/user", {
+                    name: name,
+                    email: email
+                }).then(res => {
+                    Swal.fire({
+                        title: "Welcome",
+                        text: "Signed Up Successfuly",
+                        icon: "success"
+                    });
+                    navigate('/');
+                })
             })
             .catch(err => {
                 console.log(err);
             });
-            Swal.fire({
-                title: "Welcome",
-                text: "Signed Up Successfuly",
-                icon: "success"
-            });
-            navigate('/');
+            
         }).catch(err => {
             Swal.fire({
                 titie: "Sorry",
@@ -39,6 +48,10 @@ export default function SignUp() {
             })
         })
     }
+
+    //google Sign upp
+
+    
 
     return (
         <section className="form">
@@ -51,6 +64,8 @@ export default function SignUp() {
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
+
+            <SocialSignUp></SocialSignUp>
         </section>
     );
 }

@@ -1,0 +1,21 @@
+section.db-carts {
+  width: 70%;
+  padding: 50px;
+}
+section.db-carts .carts {
+  width: 100%;
+}
+section.db-carts .carts table {
+  width: 80%;
+  margin: auto;
+}
+section.db-carts .carts table tbody {
+  width: 100%;
+}
+section.db-carts .carts table tr {
+  width: 80%;
+}
+section.db-carts .carts table tr:nth-child(1) {
+  background: #000;
+  color: #fff;
+}/*# sourceMappingURL=Dashboard.css.map */
